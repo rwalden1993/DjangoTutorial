@@ -27,13 +27,14 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Django Fundamentals</a>
+          <a class="navbar-brand" href="{% url 'tictactoe_welcome' %}">Django Fundamentals</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
                 <li><a href="{% url 'player_logout' %}">Logout</a></li>
             {% else %}
-                <li><a href="{% url 'player_login' %}">Login</a></li>
+                <button type="submit" class="btn navbar-btn btn-default"><a href="{% url 'player_login' %}">Login</a></button>
+                <button type="submit" class="btn navnar-btn btn-default"><a href="{% url 'player_signup' %}">Sign Up</a></button>
             {% endif %}
         </ul>
       </div>
